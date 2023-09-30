@@ -1,53 +1,35 @@
-import airbnb from "./airbnb.png";
-import bill from "./bill.png";
-import binance from "./binance.png";
-import card from "./card.png";
-import coinbase from "./coinbase.png";
-import dropbox from "./dropbox.png";
-import logo from "./logo.svg";
-import quotes from "./quotes.svg";
-import robot from "./robot.png";
-import send from "./Send.svg";
-import shield from "./Shield.svg";
-import star from "./Star.svg";
-import menu from "./menu.svg";
+import nvLogo from "./nvLogo.png";
+import catGlasses from "./catGlasses.png";
+import catHeart from "./catHeart.png";
+import catThink from "./catThink.png";
+import menu from "./Menu.png";
 import close from "./close.svg";
-import google from "./google.svg";
-import apple from "./apple.svg";
-import arrowUp from "./arrow-up.svg";
-import discount from "./Discount.svg";
-import facebook from "./facebook.svg";
-import instagram from "./instagram.svg";
-import linkedin from "./linkedin.svg";
-import twitter from "./twitter.svg";
-import people01 from "./people01.png";
-import people02 from "./people02.png";
-import people03 from "./people03.png";
+import char1 from "./char1.png";
+import char2 from "./char2.png";
+import char3 from "./char3.png";
+import char4 from "./char4.png";
+import option1 from "./option1.png";
+import option2 from "./option2.png";
+import bg1 from "./bg1.png";
+import optionSelected from "./optionSelected.png";
+import phone from "./phone.png";
+import ringing from "./ringing.png";
 
 export {
-  airbnb,
-  bill,
-  binance,
-  card,
-  coinbase,
-  dropbox,
-  logo,
-  quotes,
-  robot,
-  send,
-  shield,
-  star,
-  menu,
-  close,
-  google,
-  apple,
-  arrowUp,
-  discount,
-  facebook,
-  instagram,
-  linkedin,
-  twitter,
-  people01,
-  people02,
-  people03,
+  nvLogo,
+  catGlasses, 
+  catHeart,
+  catThink,
+  ringing,
+  char1, 
+  char2,
+  char3,
+  char4,
+  option1, 
+  option2,
+  phone,
+  bg1,
+  optionSelected,
+  menu, 
+  close
 };
