@@ -9,6 +9,7 @@ import FireDetection from "./fireDetection"
 import SoundVisualizer from "./microRequest";
 import PhoneCall from "./phoneCall";
 import Cam from "./nvCam";
+import CamModel from "./cam-with-model";
 
 export {
   Navbar,
@@ -21,5 +22,6 @@ export {
   FireDetection, 
   SoundVisualizer,
   PhoneCall,
-  Cam
+  Cam,
+  CamModel
 };

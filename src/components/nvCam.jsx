@@ -84,7 +84,7 @@ const nvCam = () => {
 
  
   const now = new Date().getTime();
-  const targetDate = now + 2*60*1000;
+  const targetDate = now + 30*1000;
 
   const [countdownFinished, setCountdownFinished] = useState(false);
 

@@ -3,10 +3,12 @@ import { catGlasses } from "../assets";
 import { NavLink } from "react-router-dom";
 import CharacterCard from "./Character";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
     <section id="home" className={`flex-col ${styles.paddingY}`}>
+
       <div
         className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
       >

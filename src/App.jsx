@@ -9,25 +9,12 @@ import {
   Ready,
   FireDetection,
   PhoneCall, 
-  Cam
+  Cam,
+  CamModel
 } from "./components";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const App = () => {
-  <div className="bg-white w-full overflow-hidden">
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Navbar />
-      </div>
-    </div>
-
-    <div className={`${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Hero />
-      </div>
-    </div>
-  </div>;
-
   return (
     <Router>
         <Routes>
@@ -40,6 +27,7 @@ const App = () => {
           <Route path="/fire-detect" element={<FireDetection/> }/>
           <Route path="/phone-call" element={<PhoneCall/> }/>
           <Route path="/nv-cam" element={<  Cam /> } />
+          <Route path="/model-cam" element={<CamModel />} />
         </Routes>
     </Router>
   );
