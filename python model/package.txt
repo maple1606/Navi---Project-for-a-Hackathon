@@ -1,0 +1,17 @@
+
+DateTime==4.3
+flatbuffers==1.12
+importlib-metadata==3.3.0
+Keras==2.4.3
+Keras-Preprocessing==1.1.2
+Markdown==3.3.3
+numpy==1.19.4
+opencv-python==4.4.0.46
+scipy==1.5.4
+six==1.15.0
+tensorboard==2.4.0
+tensorboard-plugin-wit==1.7.0
+tensorflow==2.5.0
+tensorflow-estimator==2.4.0
+termcolor==1.1.0
+zipp==3.4.0
