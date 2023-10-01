@@ -9,24 +9,47 @@ const CharacterCard = () => {
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
   const [clicked4, setClicked4] = useState(false);
+  const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
 
   const clickedOnImage1 = () => {
-    setClicked1(!clicked1);
-  };
+    setClicked1(true);
+    setClicked2(false);
+    setClicked3(false);
+    setClicked4(false);
+    setIsNextButtonEnabled(true);
 
+  };
+  
   const clickedOnImage2 = () => {
-    setClicked2(!clicked2);
-  };
+    setClicked1(false);
+    setClicked2(true);
+    setClicked3(false);
+    setClicked4(false);
+    setIsNextButtonEnabled(true);
 
+  };
+  
   const clickedOnImage3 = () => {
-    setClicked3(!clicked3);
+    setClicked1(false);
+    setClicked2(false);
+    setClicked3(true);
+    setClicked4(false);
+    setIsNextButtonEnabled(true);
+
+  };
+  
+  const clickedOnImage4 = () => {
+    setClicked1(false);
+    setClicked2(false);
+    setClicked3(false);
+    setClicked4(true);
+    setIsNextButtonEnabled(true);
+
   };
 
-  const clickedOnImage4 = () => {
-    setClicked4(!clicked4);
-  };
 
   return (
+
     <section id="card" className={`flex-col ${styles.paddingY}`}>
       <div className="flex flex-row justify-between items-center w-full">
         <h1 className="flex-1 font-DIN-Round-Pro text-center font-semibold ss:text-[28px] text-[52px] text-#273B4A ss:leading-[50px] leading-[75px]">
@@ -46,6 +69,7 @@ const CharacterCard = () => {
           </button>
           <button
             className={clicked2 ? "image-button-color" : "image-button-grey"}
+
             onClick={clickedOnImage2}
           >
             <img src={char2}></img>
@@ -65,14 +89,14 @@ const CharacterCard = () => {
             <img src={char4}></img>
           </button>
         </div>
-        <div className={`flex-row w-full overflow-hidden ${styles.flexCenter}`}>
+        <div className={`flex-row w-full overflow-hidden ${styles.flexCenter} p-10` }>
           <NavLink to="/welcome">
-          <button className={`${styles.flexCenter} boxed cursor-pointer`}>
+          <button className={isNextButtonEnabled ? "boxed" : "boxed-grey"}  disabled={!isNextButtonEnabled}>
             <div
-              className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] boxed`}
+              className={`${styles.flexCenter} w-[100%] h-[100%]`}
             >
               <p className="font-poppins font-medium text-[18px] leading-[23.4px]">
-                <span className="text-white">Next</span>
+                <span className={isNextButtonEnabled ? "text-white" : "text-#A4A4A4"} >Next</span>
               </p>
             </div>
           </button>

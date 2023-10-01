@@ -1,11 +1,10 @@
 import styles from "../style";
 import React from "react";
-import { catHeart } from "../assets";
-import { useState } from "react";
-import { messeges } from "../constants";
+import { catGlasses, catHeart } from "../assets";
 import { NavLink } from "react-router-dom";
 
 const WelcomeNext = () => {
+  const inputValue = window.localStorage.getItem('name');
   return (
     <section id="welcomeNxt" className={`flex-col ${styles.paddingY}`}>
       <div
@@ -19,7 +18,7 @@ const WelcomeNext = () => {
             <button className={`$bg-primary w-[100%] h-[100%] dialouge`}>
               <p className="font-poppins font-medium text-[16px] leading-[23.4px]">
                 <span className="text-black">
-                  Hello Lucy, I'm Navi. I will be your buddy, support you
+                  Hello {inputValue}, I'm Navi. I will be your buddy, supporting you
                   throughout the journey of learning how to self-protect during
                   fire situations.
                 </span>

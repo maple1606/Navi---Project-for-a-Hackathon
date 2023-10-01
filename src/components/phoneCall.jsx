@@ -1,16 +1,31 @@
 import styles from "../style";
 import React from "react";
-import { catThink, phone, ringing } from "../assets";
+import { catThink, catLove, phone, ringing, call } from "../assets";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+export let inputValue = "";
+
 const PhoneCall = () => {
+  let rightNumber = false;
+  const [inputValue, setInputValue] = useState(false);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  console.log(inputValue);
+
+  if (inputValue == "114") {
+    rightNumber = true;
+  }
+
   return (
     <section id="phoneCall" className={`flex-col bg-image`}>
       <div
         className={`flex-1 flex-row ${styles.flexCenter} ${styles.paddingY} w-full md:my-0 my-10 relative`}
       >
-        <img src={catThink} className="w-[7%] h-[7%] relative z-[5] " />
+        <img src={rightNumber ? catLove : catThink} className="w-[7%] h-[7%] relative z-[5] " />
         <div className={`flex p-7`}>
           <div className={`overflow-hidden`}>
             <div className={`cursor-pointer`}>
@@ -28,14 +43,17 @@ const PhoneCall = () => {
       <div
         className={`flex-1 flex-row space-x-3 ${styles.flexCenter} w-full md:my-0 relative`}
       >
-        <form className={`phoning`}>
+        <form className={rightNumber ? `phoning-green` : `phoning-red`}>
           <label>
-            <input type="text" />
+            <input type="text" onChange={handleInputChange} />
           </label>
         </form>
         <NavLink to="/nv-Cam">
-          <button className="button-image ">
-            <img src={ringing} className="w-[60%] h-[60%] relative z-[5] " />
+          <button className="button-image" disabled={!rightNumber}>
+            <img
+              src={rightNumber ? ringing : call}
+              className="w-[60%] h-[60%] relative z-[5] "
+            />
           </button>
         </NavLink>
       </div>

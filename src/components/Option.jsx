@@ -7,9 +7,11 @@ import { NavLink } from "react-router-dom";
 
 const Option = () => {
   const [clicked, setClicked] = useState(false);
+  const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
 
   const clickedOnImage = () => {
     setClicked(!clicked);
+    setIsNextButtonEnabled(true);
   };
   
   return (
@@ -42,19 +44,19 @@ const Option = () => {
           <img src={option2}></img>
         </button>
       </div>
-      <div className={`flex-row w-full overflow-hidden ${styles.flexCenter}`}>
-       <NavLink to="/ready">
-          <button className={`${styles.flexCenter} boxed cursor-pointer`}>
+      <div className={`flex-row w-full overflow-hidden ${styles.flexCenter} p-10` }>
+          <NavLink to="/ready">
+          <button className={isNextButtonEnabled ? "boxed" : "boxed-grey"}  disabled={!isNextButtonEnabled}>
             <div
-              className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] boxed`}
+              className={`${styles.flexCenter} w-[100%] h-[100%]`}
             >
               <p className="font-poppins font-medium text-[18px] leading-[23.4px]">
-                <span className="text-white">Next</span>
+                <span className={isNextButtonEnabled ? "text-white" : "text-#A4A4A4"} >Next</span>
               </p>
             </div>
           </button>
           </NavLink>
-      </div>
+        </div>
     </section>
   );
 };

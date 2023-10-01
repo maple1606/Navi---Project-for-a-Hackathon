@@ -1,7 +1,7 @@
 import styles from "../style";
 import { catGlasses } from "../assets";
+import { NavLink } from "react-router-dom";
 import CharacterCard from "./Character";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -22,19 +22,28 @@ const Hero = () => {
             <span className="text-gradient ss:text-[195px]">NAVI</span>{" "}
           </h1>
         </div>
-        <p
-          className={`${styles.paragraph} max-w-[470px] mt-5 text-#273B4A text-center`}
+        
+      </div>
+
+      <div className={`flex-col w-full overflow-hidden space-y-7 ${styles.flexCenter}`}>
+      <p
+          className={`${styles.paragraph} max-w-[470px] mt-5 text-black text-center`}
         >
           The free, fun and effective way to learn how to survive in a fire
           situation
         </p>
-      </div>
-
-      <div className={`flex-1 ${styles.flexCenter}`}>
-        <Button>
-          
-        </Button>
-      </div>
+        <NavLink to="/card">
+          <button className={`${styles.flexCenter} boxed cursor-pointer`}>
+            <div
+              className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] boxed`}
+            >
+              <p className="font-poppins font-medium text-[18px] leading-[23.4px]">
+                <span className="text-white">Get Started</span>
+              </p>
+            </div>
+          </button>
+          </NavLink>
+        </div>
     </section>
   );
 };

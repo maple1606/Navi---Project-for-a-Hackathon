@@ -3,11 +3,14 @@ import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Welcome = () => {
-  const [inputGot, setInputGot] = useState(false);
+export let inputValue = "";
 
-  const getYourInput = () => {
-    setInputGot(!inputGot);
+const Welcome = () => {
+  const [inputValue, setInputValue] = useState(false);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+    window.localStorage.setItem('name', event.target.value);
   };
 
   return (
@@ -19,27 +22,28 @@ const Welcome = () => {
         </h1>
       </div>
       <div
-        className={`flex ${styles.flexCenter} flex-row justify-between items-center w-full p-10`}
+        className={`flex ${styles.flexCenter} flex-col space-y-10 justify-between items-center w-full p-10`}
       >
         <form className={`flex ${styles.flexCenter} search-bar `}>
           <label>
-            <input type="text" />
+            <input
+              type="text"
+              onChange={handleInputChange}
+            />
           </label>
         </form>
-      </div>
-      <div className={`flex-row w-full overflow-hidden ${styles.flexCenter}`}>
         <NavLink to="/welcome-nxt">
-          <button className={`${styles.flexCenter} boxed cursor-pointer`}>
+          <button className={inputValue ? "boxed" : "boxed-grey"}  disabled={!inputValue}>
             <div
-              className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] boxed`}
+              className={`${styles.flexCenter} w-[100%] h-[100%]`}
             >
               <p className="font-poppins font-medium text-[18px] leading-[23.4px]">
-                <span className="text-white">Next</span>
+                <span className={inputValue ? "text-white" : "text-#A4A4A4"} >Next</span>
               </p>
             </div>
           </button>
           </NavLink>
-        </div>
+      </div>
     </section>
   );
 };
